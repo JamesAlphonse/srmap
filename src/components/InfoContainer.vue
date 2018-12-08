@@ -16,17 +16,14 @@
   #info-container {
     position: absolute;
     display: block;
-    width: 200px;
-    max-width: 200px;
-    min-height: 60px;
+    padding: 15px;
     text-align: center;
-    line-height: 60px;
     top: 0;
     left: 0;
     transform: translate(0, 0);
     border: 1px solid #fff;
     background: rgba(0,0,0,0.8);
-    transition: transform 0.07s, opacity 0.5s, content 2s;
+    transition: transform 0.07s, opacity 0.2s, content 2s;
     will-change: transform;
     color: #fff;
     pointer-events: none;
@@ -51,12 +48,12 @@
         if(this.package.class == 'state active' && this.package.id.length == 2){
           if(this.package.x < this.threshold)
             this.offset.x = 50
-          else if(this.package.x > window.innerWidth - this.threshold)
+          else if(this.package.x > this.package.container.clientWidth - this.threshold)
             this.offset.x = -50 - this.$refs.info.clientWidth
 
           if(this.package.y < this.threshold)
             this.offset.y = 50
-          else if(this.package.y > window.innerHeight - this.threshold)
+          else if(this.package.y > this.package.container.clientHeight - this.threshold)
             this.offset.y = -50 - this.$refs.info.clientHeight
 
           this.point.x = this.package.x + this.offset.x
