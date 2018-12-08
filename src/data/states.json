@@ -1,0 +1,41 @@
+{
+	"AZ": {
+		"name": "Arizona"
+	},
+	"FL": {
+		"name": "Florida"
+	},
+	"GA": {
+		"name": "Georgia"
+	},
+	"IN": {
+		"name": "Indiana"
+	},
+	"KY": {
+		"name": "Kentucky"
+	},
+	"MI": {
+		"name": "Michigan"
+	},
+	"NC": {
+		"name": "North Carolina"
+	},
+	"NJ": {
+		"name": "New Jersey"
+	},
+	"NY": {
+		"name": "New York"
+	},
+	"OH": {
+		"name": "Ohio"
+	},
+	"PA": {
+		"name": "Pennsylvania"
+	},
+	"SC": {
+		"name": "South Carolina"
+	},
+	"TN": {
+		"name": "Tennessee"
+	}
+}
