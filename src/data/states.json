@@ -2,6 +2,9 @@
 	"AZ": {
 		"name": "Arizona"
 	},
+	"CA": {
+		"name": "California"
+	},
 	"FL": {
 		"name": "Florida"
 	},
@@ -37,5 +40,11 @@
 	},
 	"TN": {
 		"name": "Tennessee"
+	},
+	"TX": {
+		"name": "Texas"
+	},
+	"WA": {
+		"name": "Washington"
 	}
 }

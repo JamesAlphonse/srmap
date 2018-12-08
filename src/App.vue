@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="map-container" @mousemove="onMouseMove">
+    <div id="map-container" ref="mapContainer" @mousemove="onMouseMove">
       <simple-svg
         :filepath="map.filepath"
         :fill="map.fill"
@@ -12,6 +12,35 @@
     </div>
 
     <InfoContainer :package="info_data"/>
+
+    <svg width="500" height="500">
+    <defs>
+        <linearGradient id='stripe-gradient' x1='0%' y1='0%' x2='100%' y2='100%'>
+            <stop offset='0%'  stop-color='red'></stop>
+            <stop offset='12.45%'  stop-color='red'></stop>
+            <stop offset='12.5%' stop-color='orange'></stop>
+            <stop offset='24.45%' stop-color='orange'></stop>
+            <stop offset='25.5%'  stop-color='red'></stop>
+            <stop offset='37.45%'  stop-color='red'></stop>
+            <stop offset='37.5%' stop-color='orange'></stop>
+            <stop offset='49.9%' stop-color='orange'></stop>
+            <stop offset='50%' stop-color='red'></stop>
+            <stop offset='62.45%' stop-color='red'></stop>
+            <stop offset='62.5%' stop-color='orange'></stop>
+            <stop offset='74.95%' stop-color='orange'></stop>
+            <stop offset='75%' stop-color='red'></stop>
+            <stop offset='87.45%' stop-color='red'></stop>
+            <stop offset='87.5%' stop-color='orange'></stop>
+            <stop offset='100%' stop-color='orange'></stop>
+        </linearGradient>
+        <pattern id='stripe-pattern' width='20' height='20' patternUnits='userSpaceOnUse' >
+            <rect x='-20' y='0' width='40' height='40' fill='url(#stripe-gradient)' stroke-width='0' stroke='none'>
+                <animate attributeName='x' from='-20' to='0' dur='1s' repeatCount='indefinite'></animate>
+            </rect>
+        </pattern>
+    </defs>
+</svg>
+
   </div>
 </template>
 
@@ -39,6 +68,21 @@
   .active:hover {
     fill: #1547D1;
   }
+
+  .war {
+    fill: url(#stripe-pattern);
+  }
+
+  .lineRed {
+    stroke:#FF0000;
+    stroke-width: 20;
+  }
+
+  .lineOrange {
+    stroke:#FF7700;
+    stroke-width: 20;
+    transform: translate(20px);
+  }
 </style>
 
 <script>
@@ -60,6 +104,7 @@
           y: e.pageY,
           id: e.target.id,
           class: e.target.className.baseVal,
+          container: this.$refs.mapContainer
         }
       }
     },
@@ -71,7 +116,7 @@
           stroke: '',
           width: '100%',
           height: '100%',
-          id: 'map'
+          id: 'map',
         },
         info_data: {},
       }
